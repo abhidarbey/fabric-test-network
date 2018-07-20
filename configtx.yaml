@@ -265,7 +265,8 @@ Profiles:
                     - *Org4
                     - *Org5
                     - *Org6
-    FourOrgsChannel1:
+    
+    GlobalChannel:
         Consortium: SampleConsortium
         Application:
             <<: *ApplicationDefaults
@@ -274,10 +275,60 @@ Profiles:
                 - *Org2
                 - *Org3
                 - *Org4
+                - *Org5
+                - *Org6
+                
             Capabilities:
                 <<: *ApplicationCapabilities
 
-    FourOrgsChannel2:
+    Channel1:
+        Consortium: SampleConsortium
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Org1
+                - *Org3
+                - *Org5
+                - *Org6
+            Capabilities:
+                <<: *ApplicationCapabilities
+
+    Channel2:
+        Consortium: SampleConsortium
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Org2
+                - *Org3
+                - *Org5
+                - *Org6
+            Capabilities:
+                <<: *ApplicationCapabilities
+
+    Channel3:
+        Consortium: SampleConsortium
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Org3
+                - *Org4
+                - *Org5
+                - *Org6
+            Capabilities:
+                <<: *ApplicationCapabilities
+
+    Channel4:
+        Consortium: SampleConsortium
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Org1
+                - *Org3
+                - *Org4
+            Capabilities:
+                <<: *ApplicationCapabilities
+
+    Channel5:
         Consortium: SampleConsortium
         Application:
             <<: *ApplicationDefaults
@@ -285,6 +336,5 @@ Profiles:
                 - *Org2
                 - *Org3
                 - *Org4
-                - *Org5
             Capabilities:
                 <<: *ApplicationCapabilities

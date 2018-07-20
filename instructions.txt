@@ -16,6 +16,61 @@
 
     Use the following command to create a four orgs channel:
 
-        ./configtxgen -profile FourOrgsChannel1 -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID FourOrgsChannel1
+        ./configtxgen -profile GlobalChannel -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID GlobalChannel
 
-        ./configtxgen -profile FourOrgsChannel2 -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID FourOrgsChannel2
+        ./configtxgen -profile Channel1 -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID Channel1
+
+        ./configtxgen -profile Channel2 -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID Channel2
+
+        ./configtxgen -profile Channel3 -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID Channel3
+
+        ./configtxgen -profile Channel4 -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID Channel4
+
+        ./configtxgen -profile Channel5 -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID Channel5
+
+# Update the anchor peers
+    Next, we will define the anchor peer for Orgs on the channel that we are constructing. Run:
+
+        # For GlobalChannel
+
+        ./configtxgen -profile GlobalChannel -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID GlobalChannel -asOrg Org1MSP
+        ./configtxgen -profile GlobalChannel -outputAnchorPeersUpdate ./channel-artifacts/Org2MSPanchors.tx -channelID GlobalChannel -asOrg Org2MSP
+        ./configtxgen -profile GlobalChannel -outputAnchorPeersUpdate ./channel-artifacts/Org3MSPanchors.tx -channelID GlobalChannel -asOrg Org3MSP
+        ./configtxgen -profile GlobalChannel -outputAnchorPeersUpdate ./channel-artifacts/Org4MSPanchors.tx -channelID GlobalChannel -asOrg Org4MSP
+        ./configtxgen -profile GlobalChannel -outputAnchorPeersUpdate ./channel-artifacts/Org5MSPanchors.tx -channelID GlobalChannel -asOrg Org5MSP
+        ./configtxgen -profile GlobalChannel -outputAnchorPeersUpdate ./channel-artifacts/Org6MSPanchors.tx -channelID GlobalChannel -asOrg Org6MSP
+
+        # For Channel1
+
+        ./configtxgen -profile Channel1 -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID Channel1 -asOrg Org1MSP
+        ./configtxgen -profile Channel1 -outputAnchorPeersUpdate ./channel-artifacts/Org3MSPanchors.tx -channelID Channel1 -asOrg Org3MSP
+        ./configtxgen -profile Channel1 -outputAnchorPeersUpdate ./channel-artifacts/Org5MSPanchors.tx -channelID Channel1 -asOrg Org5MSP
+        ./configtxgen -profile Channel1 -outputAnchorPeersUpdate ./channel-artifacts/Org6MSPanchors.tx -channelID Channel1 -asOrg Org6MSP
+
+        # For Channel2
+
+        ./configtxgen -profile Channel2 -outputAnchorPeersUpdate ./channel-artifacts/Org2MSPanchors.tx -channelID Channel2 -asOrg Org2MSP
+        ./configtxgen -profile Channel2 -outputAnchorPeersUpdate ./channel-artifacts/Org3MSPanchors.tx -channelID Channel2 -asOrg Org3MSP
+        ./configtxgen -profile Channel2 -outputAnchorPeersUpdate ./channel-artifacts/Org5MSPanchors.tx -channelID Channel2 -asOrg Org5MSP
+        ./configtxgen -profile Channel2 -outputAnchorPeersUpdate ./channel-artifacts/Org6MSPanchors.tx -channelID Channel2 -asOrg Org6MSP
+
+        # For Channel3
+
+        ./configtxgen -profile Channel3 -outputAnchorPeersUpdate ./channel-artifacts/Org3MSPanchors.tx -channelID Channel3 -asOrg Org3MSP
+        ./configtxgen -profile Channel3 -outputAnchorPeersUpdate ./channel-artifacts/Org4MSPanchors.tx -channelID Channel4 -asOrg Org4MSP
+        ./configtxgen -profile Channel3 -outputAnchorPeersUpdate ./channel-artifacts/Org5MSPanchors.tx -channelID Channel3 -asOrg Org5MSP
+        ./configtxgen -profile Channel3 -outputAnchorPeersUpdate ./channel-artifacts/Org6MSPanchors.tx -channelID Channel3 -asOrg Org6MSP
+
+        # For Channel4
+
+        ./configtxgen -profile Channel4 -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID Channel4 -asOrg Org1MSP
+        ./configtxgen -profile Channel4 -outputAnchorPeersUpdate ./channel-artifacts/Org3MSPanchors.tx -channelID Channel4 -asOrg Org3MSP
+        ./configtxgen -profile Channel4 -outputAnchorPeersUpdate ./channel-artifacts/Org4MSPanchors.tx -channelID Channel4 -asOrg Org4MSP
+
+        # For Channel5
+
+        ./configtxgen -profile Channel5 -outputAnchorPeersUpdate ./channel-artifacts/Org2MSPanchors.tx -channelID Channel5 -asOrg Org2MSP
+        ./configtxgen -profile Channel5 -outputAnchorPeersUpdate ./channel-artifacts/Org3MSPanchors.tx -channelID Channel5 -asOrg Org3MSP
+        ./configtxgen -profile Channel5 -outputAnchorPeersUpdate ./channel-artifacts/Org4MSPanchors.tx -channelID Channel5 -asOrg Org4MSP
+
+        
