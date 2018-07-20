@@ -1,0 +1,21 @@
+# Define network topology in crypto-config.yaml
+    Cryptogen consumes a file - crypto-config.yaml - that contains the network topology and allows
+    us to generate a set of certificates and keys for both the Organizations and the components
+    that belong to those Organizations. Run:
+        
+        ./cryptogen generate --config=./crypto-config.yaml
+
+    to generate the orderers and peers
+
+
+# Define genesis block in configtx.yaml
+    Next, we need to tell the configtxgen tool where to look for the configtx.yaml file that it needs
+    to ingest. Then, we’ll invoke the configtxgen tool to create the orderer genesis block:
+
+        ./configtxgen -profile MultiOrgsOrdererGenesis -outputBlock ./channel-artifacts/genesis.block
+
+    Use the following command to create a four orgs channel:
+
+        ./configtxgen -profile FourOrgsChannel1 -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID FourOrgsChannel1
+
+        ./configtxgen -profile FourOrgsChannel2 -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID FourOrgsChannel2
